@@ -4,7 +4,8 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Locale
+import java.math.BigDecimal
+import kotlin.random.Random
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,23 +13,17 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val editText = findViewById<CurrencyEditText>(R.id.edit_text)
         val tvValue = findViewById<TextView>(R.id.tv_value)
-        val getBtn = findViewById<Button>(R.id.btn_get_value)
-        val reverseBtn = findViewById<Button>(R.id.btn_reverse_symbol)
+        val showBtn = findViewById<Button>(R.id.btn_show)
+        val randomBtn = findViewById<Button>(R.id.btn_random)
 
-        getBtn.setOnClickListener {
+        showBtn.setOnClickListener {
             editText.getValue().also {
-                tvValue.text = it.toPlainString()
+                tvValue.text = it?.let { BigDecimal.valueOf(it).toPlainString() }
             }
         }
 
-        var isReverse = false
-        reverseBtn.setOnClickListener {
-            if (isReverse) {
-                editText.setLocale(Locale.ENGLISH)
-            } else {
-                editText.setLocale(Locale("pt"))
-            }
-            isReverse = !isReverse
+        randomBtn.setOnClickListener {
+            editText.setValue(Random.nextDouble(0.0, 100000000.0))
         }
     }
 }

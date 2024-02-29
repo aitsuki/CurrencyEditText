@@ -29,21 +29,21 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/btn_get_value"
+        android:id="@+id/btn_show"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Value"
+        android:text="Display Value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_text" />
 
     <Button
-        android:id="@+id/btn_reverse_symbol"
+        android:id="@+id/btn_random"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Change Locale"
+        android:text="Random Value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_get_value" />
+        app:layout_constraintTop_toBottomOf="@id/btn_show" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
