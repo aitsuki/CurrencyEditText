@@ -76,7 +76,7 @@ class CurrencyEditText @JvmOverloads constructor(
                 return
             }
 
-            if (clean == D) {
+            if (clean.startsWith(D)) {
                 text.replace(0, 1, "0$D")
                 editing = false
                 return
